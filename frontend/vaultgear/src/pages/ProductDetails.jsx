@@ -1,0 +1,121 @@
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import api from "../lib/axios";
+import toast from "react-hot-toast";
+import { Container, Row, Col, Table, Button, Form } from "react-bootstrap";
+
+const ProductDetails = () => {
+  const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  const navigate = useNavigate();
+
+  const { id } = useParams();
+
+  useEffect(() => {
+    const getProduct = async () => {
+      try {
+        const res = await api.get(`/product/${id}`);
+        setProduct(res.data);
+        console.log(res.data);
+      } catch (e) {
+        toast.error("Failed to fetch product");
+        console.log(`Error fetching product: ${e}`);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getProduct();
+  }, [id]);
+
+  if (loading) {
+    return <div>LOADING...</div>;
+  }
+
+  return (
+    <>
+      <Container className="my-5">
+        {/* Breadcrumb */}
+        <p className="text-muted">Home / {product.title}</p>
+
+        {/* Title + Description */}
+        <h2>{product.title}</h2>
+        <p className="text-secondary">{product.description}</p>
+
+        {/* Images */}
+        <Row className="mb-4">
+          {product.images?.map((img, index) => (
+            <Col md={4} key={index} className="mb-3">
+              <img
+                src={img}
+                alt={product.title}
+                className="img-fluid rounded shadow-sm"
+              />
+            </Col>
+          ))}
+        </Row>
+
+        {/* Technical Specifications */}
+        <h4>Technical Specifications</h4>
+        <Table striped bordered hover responsive className="w-75">
+          <tbody>
+            <tr>
+              <td>
+                <strong>Model</strong>
+              </td>
+              <td>{product.specifications?.model}</td>
+            </tr>
+            {product.specifications?.batteryLife && (
+              <tr>
+                <td>
+                  <strong>Battery Life</strong>
+                </td>
+                <td>{product.specifications.batteryLife}</td>
+              </tr>
+            )}
+            {product.specifications?.weight && (
+              <tr>
+                <td>
+                  <strong>Weight</strong>
+                </td>
+                <td>{product.specifications.weight}</td>
+              </tr>
+            )}
+            {/* Extra dynamic specifications */}
+            {product.specifications?.extra &&
+              Object.entries(product.specifications.extra).map(
+                ([key, value]) => (
+                  <tr key={key}>
+                    <td>
+                      <strong>{key}</strong>
+                    </td>
+                    <td>{value}</td>
+                  </tr>
+                )
+              )}
+          </tbody>
+        </Table>
+
+        {/* Add to Cart + Delivery */}
+        <Row className="mt-4">
+          <Col md={6}>
+            <Button variant="primary" className="mb-3">
+              Add to Cart
+            </Button>
+            <h5>Delivery Availability</h5>
+            <Form className="d-flex">
+              <Form.Control
+                type="text"
+                placeholder="Enter Postal Code"
+                className="me-2"
+              />
+              <Button variant="outline-secondary">Check</Button>
+            </Form>
+          </Col>
+        </Row>
+      </Container>
+    </>
+  );
+};
+
+export default ProductDetails;

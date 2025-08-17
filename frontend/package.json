@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-hot": "^0.0.1",
+    "toast": "^0.5.4"
+  }
+}
