@@ -102,15 +102,6 @@ const ProductDetails = () => {
             <Button variant="primary" className="mb-3">
               Add to Cart
             </Button>
-            <h5>Delivery Availability</h5>
-            <Form className="d-flex">
-              <Form.Control
-                type="text"
-                placeholder="Enter Postal Code"
-                className="me-2"
-              />
-              <Button variant="outline-secondary">Check</Button>
-            </Form>
           </Col>
         </Row>
       </Container>

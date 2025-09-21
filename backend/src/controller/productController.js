@@ -1,11 +1,23 @@
 import Product from "../model/product.js"
 
-export async function getAllProducts(req, res) {
+export async function getAllProducts(_, res) { //the _ in the req section is used since we dont use the req parameter in the function
    try {
       const products = await Product.find()
       res.status(200).json(products)
    } catch (e) {
       console.error(`Error in fetching products: ${e}`)
+      res.status(500).json({ message: "Internal Server Error" })
+   }
+}
+
+export async function getProductById(req, res) {
+   try {
+      const { id } = req.params
+      const product = await Product.findById(id)
+      if(!product) return res.status(404).json({message: "Product not found!"})
+      res.status(200).json(product)
+   } catch (e) {
+      console.error(`Error in fetching product: ${e}`)
       res.status(500).json({ message: "Internal Server Error" })
    }
 }
@@ -73,7 +85,7 @@ export async function deleteProduct(req, res) {
 
       if (!deletedProduct) return res.status(404).json({message: "Product not found"})
          
-      res.status(200).json({ message: "Product updated successfully" })
+      res.status(200).json({ message: "Product deleted successfully" })
 
    } catch (e) {
       console.error(`Error deleting product: ${e}`)
