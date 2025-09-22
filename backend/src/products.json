@@ -1,0 +1,167 @@
+[
+  {
+    "_id": "1",
+    "title": "Dell XPS 13",
+    "description": "Compact and powerful ultrabook.",
+    "image": "xps13.jpg",
+    "specifications": {
+      "model": "XPS 13 9310",
+      "batteryLife": "12 hours",
+      "weight": "1.2kg"
+    }
+  },
+  {
+    "_id": "2",
+    "title": "MacBook Air M2",
+    "description": "Lightweight laptop with M2 chip.",
+    "image": "macbookair.jpg",
+    "specifications": {
+      "model": "MacBook Air M2",
+      "batteryLife": "15 hours",
+      "weight": "1.3kg"
+    }
+  },
+  {
+    "_id": "3",
+    "title": "HP Spectre x360",
+    "description": "Convertible laptop with touchscreen.",
+    "image": "hpspectre.jpg",
+    "specifications": {
+      "model": "Spectre x360 14",
+      "batteryLife": "14 hours",
+      "weight": "1.3kg"
+    }
+  },
+    {
+    "_id": "4",
+    "title": "DJI Mini 4 Pro",
+    "description": "Compact drone with 4K camera and obstacle avoidance.",
+    "image": "dji_mini4pro.jpg",
+    "specifications": {
+      "weight": "249g",
+      "flightTime": "34 min",
+      "camera": "4K"
+    }
+  },
+  {
+    "_id": "5",
+    "title": "Nintendo Switch OLED",
+    "description": "Hybrid gaming console with vibrant OLED screen.",
+    "image": "nintendo_switch_oled.jpg",
+    "specifications": {
+      "storage": "64GB",
+      "screen": "7-inch OLED",
+      "batteryLife": "9 hours"
+    }
+  },
+  {
+    "_id": "6",
+    "title": "Apple Watch Series 9",
+    "description": "Smartwatch with fitness tracking and always-on display.",
+    "image": "apple_watch9.jpg",
+    "specifications": {
+      "model": "Series 9",
+      "batteryLife": "18 hours",
+      "features": "ECG, Blood Oxygen, Fitness Tracking"
+    }
+  },
+  {
+    "_id": "7",
+    "title": "GoPro Hero 12 Black",
+    "description": "Durable action camera with 5.3K video recording.",
+    "image": "gopro_hero12.jpg",
+    "specifications": {
+      "video": "5.3K",
+      "waterproof": "10m",
+      "weight": "153g"
+    }
+  },
+  {
+    "_id": "8",
+    "title": "Amazon Echo (5th Gen)",
+    "description": "Smart speaker with Alexa voice assistant and premium sound.",
+    "image": "amazon_echo5.jpg",
+    "specifications": {
+      "speaker": "3.0",
+      "voiceAssistant": "Alexa",
+      "connectivity": "Wi-Fi, Bluetooth"
+    }
+  },
+  {
+    "_id": "9",
+    "title": "Fitbit Charge 6",
+    "description": "Advanced fitness tracker with heart rate monitoring.",
+    "image": "fitbit_charge6.jpg",
+    "specifications": {
+      "batteryLife": "7 days",
+      "features": "Heart Rate, Sleep, SpO2",
+      "weight": "30g"
+    }
+  },
+  {
+    "_id": "10",
+    "title": "Oculus Quest 3",
+    "description": "Standalone VR headset with immersive gaming experience.",
+    "image": "oculus_quest3.jpg",
+    "specifications": {
+      "display": "Fast-switch LCD",
+      "storage": "128GB",
+      "weight": "503g"
+    }
+  },
+  {
+    "_id": "11",
+    "title": "Canon EOS R7",
+    "description": "Mirrorless camera with 32.5MP sensor and 4K video.",
+    "image": "canon_eos_r7.jpg",
+    "specifications": {
+      "sensor": "32.5MP",
+      "video": "4K",
+      "weight": "612g"
+    }
+  },
+  {
+    "_id": "12",
+    "title": "Samsung Galaxy Buds Pro",
+    "description": "Wireless earbuds with active noise cancellation.",
+    "image": "galaxy_buds_pro.jpg",
+    "specifications": {
+      "batteryLife": "8 hours",
+      "type": "In-ear",
+      "weight": "6.3g per earbud"
+    }
+  },
+  {
+    "_id": "13",
+    "title": "Kindle Paperwhite 5",
+    "description": "Waterproof e-reader with adjustable warm light.",
+    "image": "kindle_paperwhite5.jpg",
+    "specifications": {
+      "storage": "32GB",
+      "batteryLife": "Weeks",
+      "screen": "6.8-inch"
+    }
+  },
+  {
+    "_id": "14",
+    "title": "Razer Kishi V2",
+    "description": "Mobile gaming controller for Android and iOS.",
+    "image": "razer_kishi_v2.jpg",
+    "specifications": {
+      "compatibility": "Android/iOS",
+      "connectivity": "USB-C/Lightning",
+      "weight": "145g"
+    }
+  },
+  {
+    "_id": "15",
+    "title": "Anker Nebula Capsule II",
+    "description": "Portable mini projector with Android TV support.",
+    "image": "anker_capsule2.jpg",
+    "specifications": {
+      "brightness": "200 ANSI lumens",
+      "resolution": "720p",
+      "weight": "740g"
+    }
+  }
+]
