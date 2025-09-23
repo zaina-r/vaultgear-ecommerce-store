@@ -1,20 +1,20 @@
 import { Navbar, Container, Nav, Badge, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
+import { useCart } from "../context/cartContext";// Add this import
 
-const Navigation = ({ cartCount = 0 }) => {
+const Navigation = () => { // Remove cartCount prop since we'll get it from context
+  const { cartCount } = useCart(); // Get cartCount from context
+
   return (
     <Navbar bg="primary" variant="dark" expand="lg" className="shadow-sm">
       <Container>
-        {/* Brand */}
         <Navbar.Brand as={Link} to="/" className="fw-bold">
           MyStore
         </Navbar.Brand>
 
-        {/* Toggle for mobile */}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-        {/* Links */}
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/" className="fw-medium">
@@ -22,7 +22,6 @@ const Navigation = ({ cartCount = 0 }) => {
             </Nav.Link>
           </Nav>
 
-          {/* Cart Button */}
           <Button
             as={Link}
             to="/cart"
@@ -47,4 +46,3 @@ const Navigation = ({ cartCount = 0 }) => {
 };
 
 export default Navigation;
-

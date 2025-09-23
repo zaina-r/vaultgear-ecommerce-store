@@ -3,10 +3,12 @@ import { useNavigate, useParams } from "react-router-dom";
 import api from "../lib/axios";
 import toast from "react-hot-toast";
 import { Container, Row, Col, Table, Button, Form } from "react-bootstrap";
+import { useCart } from "../context/cartContext";
 
 const ProductDetails = () => {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
+  const { addToCart, removeFromCart, cartItems } = useCart();
 
   const navigate = useNavigate();
 
@@ -36,6 +38,18 @@ const ProductDetails = () => {
     };
     getProduct();
   }, [id]);
+
+  const handleAddToCart = () => {
+    addToCart(product);
+    toast.success("Added to cart!");
+  };
+
+  const handleRemoveFromCart = () => {
+    removeFromCart(product._id);
+    toast.success("Removed from cart!");
+  };
+
+  const isInCart = cartItems.some(item => item._id === product?._id);
 
   if (loading) {
     return <div>LOADING...</div>;
@@ -106,11 +120,17 @@ const ProductDetails = () => {
         </Table>
 
         {/* Add to Cart + Delivery */}
-        <Row className="mt-4">
+         <Row className="mt-4">
           <Col md={6}>
-            <Button variant="primary" className="mb-3">
-              Add to Cart
-            </Button>
+            {isInCart ? (
+              <Button variant="danger" className="mb-3" onClick={handleRemoveFromCart}>
+                Remove from Cart
+              </Button>
+            ) : (
+              <Button variant="primary" className="mb-3" onClick={handleAddToCart}>
+                Add to Cart
+              </Button>
+            )}
           </Col>
         </Row>
       </Container>
