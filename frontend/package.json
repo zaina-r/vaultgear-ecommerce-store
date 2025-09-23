@@ -1,6 +1,9 @@
 {
   "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
     "react-hot": "^0.0.1",
-    "toast": "^0.5.4"
+    "toast": "^0.5.4",
+    "zustand": "^5.0.8"
   }
 }

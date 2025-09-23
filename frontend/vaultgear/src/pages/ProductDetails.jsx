@@ -15,8 +15,17 @@ const ProductDetails = () => {
   useEffect(() => {
     const getProduct = async () => {
       try {
-        const res = await api.get(`/product/${id}`);
-        setProduct(res.data);
+        const res = await api.get(`/products/${id}`);
+
+        // Transform images to full URLs
+        const productWithFullUrls = {
+          ...res.data.data,
+          images: res.data.data.images?.map(
+            (img) => `http://localhost:5001/images/${img}`
+          ),
+        };
+
+        setProduct(productWithFullUrls);
         console.log(res.data);
       } catch (e) {
         toast.error("Failed to fetch product");
