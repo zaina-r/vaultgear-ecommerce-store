@@ -10,7 +10,7 @@ const Navigation = () => { // Remove cartCount prop since we'll get it from cont
     <Navbar bg="primary" variant="dark" expand="lg" className="shadow-sm">
       <Container>
         <Navbar.Brand as={Link} to="/" className="fw-bold">
-          MyStore
+          VaultGear
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
