@@ -19,7 +19,6 @@ const ProductDetails = () => {
       try {
         const res = await api.get(`/products/${id}`);
 
-        // Transform images to full URLs
         const productWithFullUrls = {
           ...res.data.data,
           images: res.data.data.images?.map(
@@ -58,14 +57,14 @@ const ProductDetails = () => {
   return (
     <>
       <Container className="my-5">
-        {/* Breadcrumb */}
+
         <p className="text-muted">Home / {product.title}</p>
 
-        {/* Title + Description */}
+
         <h2>{product.title}</h2>
         <p className="text-secondary">{product.description}</p>
 
-        {/* Images */}
+
         <Row className="mb-4">
           {product.images?.map((img, index) => (
             <Col md={4} key={index} className="mb-3">
@@ -78,7 +77,7 @@ const ProductDetails = () => {
           ))}
         </Row>
 
-        {/* Technical Specifications */}
+
         <h4>Technical Specifications</h4>
         <Table striped bordered hover responsive className="w-75">
           <tbody>
@@ -104,7 +103,7 @@ const ProductDetails = () => {
                 <td>{product.specifications.weight}</td>
               </tr>
             )}
-            {/* Extra dynamic specifications */}
+
             {product.specifications?.extra &&
               Object.entries(product.specifications.extra).map(
                 ([key, value]) => (
@@ -119,7 +118,6 @@ const ProductDetails = () => {
           </tbody>
         </Table>
 
-        {/* Add to Cart + Delivery */}
          <Row className="mt-4">
           <Col md={6}>
             {isInCart ? (

@@ -1,10 +1,10 @@
 import { Navbar, Container, Nav, Badge, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
-import { useCart } from "../context/cartContext";// Add this import
+import { useCart } from "../context/cartContext";
 
-const Navigation = () => { // Remove cartCount prop since we'll get it from context
-  const { cartCount } = useCart(); // Get cartCount from context
+const Navigation = () => { 
+  const { cartCount } = useCart(); 
 
   return (
     <Navbar bg="primary" variant="dark" expand="lg" className="shadow-sm">

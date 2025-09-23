@@ -4,11 +4,10 @@ import ProductCard from "../components/ProductCard";
 const HomePage = () => {
   const [products, setProducts] = useState([]);
 
-  // Fetch products when the page loads
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch("http://localhost:5001/api/products"); // calls backend
+        const res = await fetch("http://localhost:5001/api/products");
         const data = await res.json();
 
         if (data.success) {

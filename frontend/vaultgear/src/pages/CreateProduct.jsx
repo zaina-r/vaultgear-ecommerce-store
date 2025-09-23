@@ -31,8 +31,8 @@ const CreateProduct = () => {
       const productData = {
         title,
         description,
-        images: [image], // wrap single image in an array
-        specifications: { model }, // wrap model in specifications object
+        images: [image], 
+        specifications: { model }, 
       };
       await api.post("/new-product", productData);
       toast.success("Product created Successfully!");
